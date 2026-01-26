@@ -1,0 +1,151 @@
+.why-choose-us {
+  padding: 6rem 2rem;
+  background: #0a0a0a;
+  /* Slightly darker than 0f0f0f to distinguish sections */
+}
+
+.wcu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wcu-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.wcu-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.wcu-title span {
+  background: linear-gradient(135deg, #00D4FF, #0066CC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wcu-subtitle {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+.wcu-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.wcu-step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.step-image-container {
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+.step-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.step-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: #00D4FF;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.step-content h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.step-content p {
+  color: #888;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.step-arrow {
+  position: absolute;
+  top: 30%;
+  /* Align with image centerish */
+  right: -1.5rem;
+  color: #333;
+  font-size: 2rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Hide arrow for last item logic is handled in JSX: index < steps.length - 1 */
+
+@media (max-width: 900px) {
+  .wcu-steps {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .step-arrow {
+    display: none;
+    /* Hide arrows on mobile stack */
+  }
+}
+
+.wcu-benefits-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 4rem auto 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wcu-benefits-text h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.wcu-benefits-text p {
+  color: #b0b0b0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.wcu-benefits-text .highlight {
+  color: #00D4FF;
+  font-weight: 600;
+}
