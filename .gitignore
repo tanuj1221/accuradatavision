@@ -35,3 +35,8 @@ Thumbs.db
 # IDEs
 .vscode/
 .idea/
+
+# Large binaries and local artifacts
+visulization/
+*.pt
+*.pth
