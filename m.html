@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccuraCount Presentation</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #0b1220;
+      color: white;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100vh;
+      padding: 60px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Logo Placement */
+    .logo {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      width: 220px;
+    }
+
+    h1 {
+      font-size: 60px;
+      margin: 0;
+      color: #00e0ff;
+    }
+
+    h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: #00e0ff;
+    }
+
+    p {
+      font-size: 22px;
+      max-width: 800px;
+      line-height: 1.6;
+      color: #d9e6ff;
+    }
+
+    .highlight {
+      color: #ffb300;
+      font-weight: bold;
+    }
+
+    /* Workflow Diagram */
+    .workflow {
+      display: flex;
+      gap: 25px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 25px 30px;
+      border-radius: 15px;
+      font-size: 20px;
+      text-align: center;
+      min-width: 180px;
+      border: 1px solid rgba(0, 224, 255, 0.3);
+    }
+
+    .arrow {
+      font-size: 35px;
+      margin-top: 20px;
+      color: #00e0ff;
+    }
+
+    /* Bullet Section */
+    ul {
+      font-size: 22px;
+      line-height: 1.8;
+      max-width: 850px;
+      color: #d9e6ff;
+    }
+
+    ul li {
+      margin-bottom: 15px;
+    }
+
+    /* Slide Separator */
+    .divider {
+      height: 6px;
+      width: 120px;
+      background: #00e0ff;
+      margin: 25px 0;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Slide 1 -->
+  <section class="slide">
+    <img src="logo.png" class="logo" alt="Accura Datavision Logo" />
+
+    <h1>AccuraCount</h1>
+    <div class="divider"></div>
+
+    <p>
+      AI + Human Intelligence for
+      <span class="highlight">Accurate Vehicle Tracking & Counting</span>
+    </p>
+
+    <p>
+      A hybrid solution that combines advanced computer vision with expert
+      human verification to deliver highly reliable traffic analytics.
+    </p>
+  </section>
+
+  <!-- ✅ Slide 2 -->
+  <section class="slide">
+    <img src="logo.png" class="logo" alt="Accura Datavision Logo" />
+
+    <h2>The Hybrid Workflow</h2>
+    <div class="divider"></div>
+
+    <p>
+      AccuraCount ensures accuracy by combining AI automation with human analyst
+      review, eliminating errors like occlusion or ID switching.
+    </p>
+
+    <div class="workflow">
+      <div class="step">📹 CCTV Footage</div>
+      <div class="arrow">→</div>
+      <div class="step">🤖 AI Vehicle Tracking</div>
+      <div class="arrow">→</div>
+      <div class="step">👨‍💻 Human Analyst Review</div>
+      <div class="arrow">→</div>
+      <div class="step">📊 Final Verified Report</div>
+    </div>
+  </section>
+
+  <!-- ✅ Slide 3 -->
+  <section class="slide">
+    <img src="logo.png" class="logo" alt="Accura Datavision Logo" />
+
+    <h2>Why AccuraCount?</h2>
+    <div class="divider"></div>
+
+    <ul>
+      <li>
+        ✅ <span class="highlight">Higher Accuracy</span> than raw AI-only systems
+      </li>
+      <li>
+        ⚡ Saves massive time compared to full manual counting
+      </li>
+      <li>
+        🚗 Reliable even under occlusion, dense traffic, and ID switch issues
+      </li>
+      <li>
+        📌 Delivers customer-ready reports with verified vehicle counts
+      </li>
+    </ul>
+  </section>
+
+</body>
+</html>

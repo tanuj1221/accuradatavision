@@ -1,6 +1,6 @@
 .products {
   padding: 6rem 2rem;
-  background: #0a0a0a;
+  background: #f8f9fa;
 }
 
 .products-container {
@@ -11,14 +11,14 @@
 
 .products-title {
   font-size: 2.5rem;
-  font-weight: 700;
-  color: #fff;
+  font-weight: 800;
+  color: #1a1a1a;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .products-title span {
-  background: linear-gradient(135deg, #00D4FF, #0066CC);
+  background: linear-gradient(135deg, #0056b3, #0088ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -26,7 +26,7 @@
 
 .products-subtitle {
   font-size: 1.1rem;
-  color: #888;
+  color: #555;
   margin-bottom: 3rem;
   max-width: 600px;
   margin-left: auto;
@@ -40,20 +40,22 @@
 }
 
 .product-card {
-  background: #151515;
+  background: #ffffff;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid #222;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   position: relative;
   text-align: left;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 212, 255, 0.3);
+  border-color: rgba(0, 86, 179, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 86, 179, 0.1);
 }
 
 .product-image {
@@ -81,14 +83,14 @@
 
 .product-title {
   font-size: 1.25rem;
-  font-weight: 600;
-  color: #fff;
+  font-weight: 700;
+  color: #333;
   margin-bottom: 0.5rem;
 }
 
 .product-description {
   font-size: 0.9rem;
-  color: #888;
+  color: #666;
   line-height: 1.5;
   margin-bottom: 1rem;
   flex-grow: 1;
@@ -105,7 +107,7 @@
 
 .product-features li {
   font-size: 0.8rem;
-  color: #aaa;
+  color: #555;
   padding-left: 1rem;
   position: relative;
 }
@@ -114,32 +116,34 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #00D4FF;
+  color: #0056b3;
   font-size: 0.75rem;
+  font-weight: 800;
 }
 
 .product-footer {
   display: flex;
   justify-content: flex-end;
   padding-top: 1rem;
-  border-top: 1px solid #222;
+  border-top: 1px solid #f0f0f0;
 }
 
 .btn-sm {
   display: inline-block;
   background: transparent;
-  color: #fff;
+  color: #0056b3;
   padding: 0.4rem 1rem;
   border-radius: 6px;
   text-decoration: none;
   font-size: 0.85rem;
-  border: 1px solid #444;
+  border: 1px solid #0056b3;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .btn-sm:hover {
-  background: rgba(0, 212, 255, 0.1);
-  border-color: #00D4FF;
+  background: #0056b3;
+  border-color: #0056b3;
   color: #fff;
 }
 

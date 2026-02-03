@@ -1,8 +1,8 @@
 .footer {
-    background: #050505;
+    background: #003366;
     color: #fff;
     padding: 4rem 2rem 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-container {
@@ -25,11 +25,11 @@
 }
 
 .footer-logo span {
-    color: #00D4FF;
+    color: #66b3ff;
 }
 
 .footer-desc {
-    color: #888;
+    color: #cbd5e1;
     line-height: 1.6;
     font-size: 0.95rem;
     max-width: 300px;
@@ -53,30 +53,31 @@
 }
 
 .footer-col ul li a {
-    color: #888;
+    color: #cbd5e1;
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
 .footer-col ul li a:hover {
-    color: #00D4FF;
+    color: #fff;
+    text-decoration: underline;
 }
 
 .contact-info p {
-    color: #888;
+    color: #cbd5e1;
     margin-bottom: 0.75rem;
     font-size: 0.95rem;
 }
 
 .footer-bottom {
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
 }
 
 .footer-bottom p {
-    color: #555;
+    color: #94a3b8;
     font-size: 0.85rem;
 }
 

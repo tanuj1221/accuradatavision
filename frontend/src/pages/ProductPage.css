@@ -1,5 +1,5 @@
 .product-page {
-    background: #0a0a0a;
+    background: #ffffff;
     min-height: 100vh;
     padding-bottom: 4rem;
 }
@@ -15,19 +15,34 @@
     justify-content: center;
     text-align: center;
     margin-bottom: 4rem;
+    position: relative;
+}
+
+.product-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Keep overlay for text readability on bg image */
+}
+
+.product-hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .product-hero-content h1 {
     font-size: 3.5rem;
     font-weight: 800;
     color: #fff;
+    /* Keep white on hero image */
     margin-bottom: 1rem;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .product-hero-content p {
     font-size: 1.5rem;
-    color: #e0e0e0;
+    color: #f0f0f0;
     max-width: 700px;
     margin: 0 auto;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -47,16 +62,16 @@
 
 .main-info h2 {
     font-size: 2.2rem;
-    color: #fff;
+    color: #1a1a1a;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+    border-bottom: 2px solid rgba(0, 86, 179, 0.2);
     padding-bottom: 0.5rem;
     display: inline-block;
 }
 
 .main-desc {
     font-size: 1.1rem;
-    color: #b0b0b0;
+    color: #555;
     line-height: 1.8;
     margin-bottom: 3rem;
 }
@@ -70,8 +85,16 @@
 .specs-card h3,
 .cta-card h3 {
     font-size: 1.5rem;
-    color: #fff;
+    color: #1a1a1a;
     margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.specs-card h3,
+.cta-card h3 {
+    color: #fff;
+    /* Sidebar cards are dark or accented? Let's make them light too or accent background */
+    color: #1a1a1a;
 }
 
 .feature-list {
@@ -83,7 +106,7 @@
 }
 
 .feature-list li {
-    color: #ddd;
+    color: #444;
     padding-left: 2rem;
     position: relative;
     font-size: 1.05rem;
@@ -93,7 +116,7 @@
     content: '✓';
     position: absolute;
     left: 0;
-    color: #00D4FF;
+    color: #0056b3;
     font-weight: bold;
 }
 
@@ -104,38 +127,39 @@
 }
 
 .benefit-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: #f8f9fa;
     padding: 1.5rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .benefit-icon {
-    color: #00D4FF;
+    color: #0056b3;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
 .benefit-card p {
-    color: #ccc;
+    color: #666;
     line-height: 1.5;
 }
 
 /* Sidebar */
 .specs-card,
 .cta-card {
-    background: #151515;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 16px;
-    border: 1px solid #222;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .spec-row {
     display: flex;
     justify-content: space-between;
     padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .spec-row:last-child {
@@ -143,17 +167,17 @@
 }
 
 .spec-label {
-    color: #888;
+    color: #666;
 }
 
 .spec-value {
-    color: #fff;
-    font-weight: 500;
+    color: #333;
+    font-weight: 600;
     text-align: right;
 }
 
 .cta-card p {
-    color: #aaa;
+    color: #555;
     margin-bottom: 1.5rem;
     line-height: 1.5;
 }
@@ -171,7 +195,7 @@
 }
 
 .back-link {
-    color: #00D4FF;
+    color: #0056b3;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -179,7 +203,7 @@
 
 .back-link:hover {
     text-decoration: underline;
-    color: #fff;
+    color: #004494;
 }
 
 @media (max-width: 991px) {
