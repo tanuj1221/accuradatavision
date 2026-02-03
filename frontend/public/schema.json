@@ -1,0 +1,60 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Accura Datavision",
+  "description": "Professional TMC, AADT, traffic volume studies, vehicle classification, and traffic survey services in US, UK, Europe, Australia, Germany",
+  "url": "https://accuradatavision.com",
+  "logo": "https://accuradatavision.com/logo.svg",
+  "telephone": "+91-7249417317",
+  "email": "admin@accuradatavision.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mumbai",
+    "addressCountry": "India"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "Europe"
+    },
+    {
+      "@type": "Country",
+      "name": "Australia"
+    },
+    {
+      "@type": "Country",
+      "name": "Germany"
+    }
+  ],
+  "serviceType": [
+    "TMC - Turning Movement Count",
+    "AADT - Annual Average Daily Traffic",
+    "Traffic Volume Studies",
+    "Vehicle Classification",
+    "Pedestrian Counting",
+    "Cyclist Counting",
+    "Intersection Analysis",
+    "Origin-Destination Surveys",
+    "Peak Hour Analysis",
+    "Traffic Data Collection",
+    "Automated Traffic Counting",
+    "Video Traffic Survey",
+    "CCTV Traffic Counting",
+    "Traffic Engineering Services",
+    "Transportation Planning"
+  ],
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127"
+  }
+}
