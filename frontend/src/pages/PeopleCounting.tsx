@@ -4,8 +4,8 @@ const PeopleCounting = () => {
     return (
         <ProductPage
             title="People Counting"
-            metaTitle="People Counting System & Footfall Analytics | Accura Datavision"
-            metaDescription="Real-time people counting and visitor analytics for retail and public spaces. Monitor occupancy, dwell time, and optimize operations with our non-intrusive AI solution."
+            metaTitle="People Counting & Footfall Analytics | US, UK, Europe, Australia | Accura Datavision"
+            metaDescription="AI-powered people counting, pedestrian counting, and visitor analytics for retail and public spaces in US, UK, Europe, Australia. Real-time footfall tracking, crowd intelligence, occupancy monitoring. Also offering TMC, AADT, vehicle classification, and comprehensive traffic survey services."
             subtitle="Footfall Analytics & Crowd Intelligence"
             image="/images/people_counting_detect.png"
             description="Understand visitor behavior with our non-intrusive People Counting solution. Perfect for retail, events, and public spaces, we help you optimize staffing, measure conversion rates, and ensure safety through density monitoring."

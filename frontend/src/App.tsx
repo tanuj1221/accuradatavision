@@ -9,6 +9,7 @@ import ParkingManagement from './pages/ParkingManagement';
 import SafetyMonitoring from './pages/SafetyMonitoring';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
+import AccuraCount from './pages/AccuraCount';
 import './App.css';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/traffic-survey" element={<TrafficSurvey />} />
+        <Route path="/accura-count" element={<AccuraCount />} />
         <Route path="/people-counting" element={<PeopleCounting />} />
         <Route path="/parking-management" element={<ParkingManagement />} />
         <Route path="/safety-monitoring" element={<SafetyMonitoring />} />

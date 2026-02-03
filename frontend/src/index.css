@@ -46,8 +46,8 @@ body {
   min-height: 100vh;
   background-color: var(--background-color);
   color: var(--text-color);
-  padding-top: 80px;
-  /* Ensure content starts below the fixed navbar */
+  padding-top: 120px;
+  /* Increased from 80px to account for 2-row navbar */
 }
 
 h1,

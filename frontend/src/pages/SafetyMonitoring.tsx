@@ -4,8 +4,8 @@ const SafetyMonitoring = () => {
     return (
         <ProductPage
             title="Safety Monitoring"
-            metaTitle="AI Safety Monitoring & Video Analytics | Accura Datavision"
-            metaDescription="Proactive AI safety monitoring for intrusion detection, PPE compliance, and hazard alerting. Enhance security with automated 24/7 intelligent video analytics."
+            metaTitle="AI Safety Monitoring & Video Analytics | US, UK, Europe, Australia | Accura Datavision"
+            metaDescription="Proactive AI safety monitoring and video analytics for intrusion detection, PPE compliance in US, UK, Europe, Australia. 24/7 intelligent surveillance. Expert TMC, AADT, vehicle classification, traffic volume studies, and comprehensive traffic survey services available."
             subtitle="Proactive Anomaly Detection & Security"
             image="/images/ppe_detect.png"
             description="Enhance security with proactive AI monitoring. Our system automatically detects anomalies, unauthorized access, and safety hazards, sending instant alerts to security personnel so they can react before incidents escalate."

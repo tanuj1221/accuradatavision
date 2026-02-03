@@ -20,10 +20,25 @@ const db = new sqlite3.Database('./contact.db', (err) => {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
             email TEXT NOT NULL,
+            company TEXT,
+            phone TEXT,
             subject TEXT NOT NULL,
             message TEXT NOT NULL,
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )`);
+
+        // Migration: Add company and phone columns if they don't exist
+        db.run(`ALTER TABLE messages ADD COLUMN company TEXT`, (err) => {
+            if (err && !err.message.includes('duplicate column')) {
+                console.error('Migration warning (company):', err.message);
+            }
+        });
+        
+        db.run(`ALTER TABLE messages ADD COLUMN phone TEXT`, (err) => {
+            if (err && !err.message.includes('duplicate column')) {
+                console.error('Migration warning (phone):', err.message);
+            }
+        });
 
         // Create visitors table
         db.run(`CREATE TABLE IF NOT EXISTS visitors (
@@ -89,16 +104,16 @@ transporter.verify((error, success) => {
 
 // Route to handle contact form submission
 app.post('/api/contact', (req, res) => {
-    const { name, email, subject, message } = req.body;
+    const { name, email, company, phone, subject, message } = req.body;
 
     if (!name || !email || !subject || !message) {
-        return res.status(400).json({ error: 'All fields are required' });
+        return res.status(400).json({ error: 'Name, email, subject, and message are required' });
     }
 
     // 1. Save to SQLite Database
-    const sql = `INSERT INTO messages (name, email, subject, message) VALUES (?, ?, ?, ?)`;
+    const sql = `INSERT INTO messages (name, email, company, phone, subject, message) VALUES (?, ?, ?, ?, ?, ?)`;
 
-    db.run(sql, [name, email, subject, message], async function (err) {
+    db.run(sql, [name, email, company || '', phone || '', subject, message], async function (err) {
         if (err) {
             console.error('Error saving to database:', err.message);
             return res.status(500).json({ error: 'Failed to save message' });
@@ -119,6 +134,8 @@ app.post('/api/contact', (req, res) => {
                     <h3>New Contact Inquiry</h3>
                     <p><strong>Name:</strong> ${name}</p>
                     <p><strong>Email:</strong> ${email}</p>
+                    ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
+                    ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
                     <p><strong>Subject:</strong> ${subject}</p>
                     <br>
                     <p><strong>Message:</strong></p>

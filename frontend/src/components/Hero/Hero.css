@@ -58,7 +58,10 @@
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: #555;
+  color: #111;
+  /* Made text darker as requested */
+  font-weight: 500;
+  /* Added slight weight for better readability */
   margin-bottom: 2.5rem;
   line-height: 1.6;
 }
@@ -172,36 +175,46 @@
   flex-wrap: wrap;
 }
 
-.hero-buttons .btn-primary {
-  background: #0056b3;
+.hero-buttons .btn-orange {
+  background: #ff8c00;
+  /* Orange background */
   color: white;
   border: none;
-  padding: 0.85rem 2.5rem;
-  font-weight: 600;
+  padding: 0.85rem 2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-buttons .btn-orange:hover {
+  background: #e67e00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.4);
+}
+
+.hero-buttons .btn-blue {
+  background: #0056b3;
+  /* Blue background */
+  color: white;
+  border: none;
+  padding: 0.85rem 2rem;
+  font-weight: 700;
   border-radius: 8px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 86, 179, 0.25);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
 
-.hero-buttons .btn-primary:hover {
+.hero-buttons .btn-blue:hover {
   background: #004494;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 86, 179, 0.35);
-}
-
-.hero-buttons .btn-outline-light {
-  background: transparent;
-  color: #0056b3;
-  border: 2px solid #0056b3;
-  padding: 0.85rem 2.5rem;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.hero-buttons .btn-outline-light:hover {
-  background: rgba(0, 86, 179, 0.05);
-  transform: translateY(-2px);
 }
 
 @media (max-width: 991px) {

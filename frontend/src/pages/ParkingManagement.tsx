@@ -4,8 +4,8 @@ const ParkingManagement = () => {
     return (
         <ProductPage
             title="Parking Management"
-            metaTitle="Smart Parking Management System & Occupancy Tracking | Accura Datavision"
-            metaDescription="AI-powered smart parking solution for real-time occupancy tracking and guidance. Replace sensors with cameras to reduce costs and improve driver experience."
+            metaTitle="Smart Parking Management & Occupancy Tracking | US, UK, Europe, Australia | Accura Datavision"
+            metaDescription="AI-powered smart parking solution for real-time occupancy tracking in US, UK, Europe, Australia. Camera-based parking management, traffic flow optimization. Also offering TMC, AADT, vehicle classification, origin-destination surveys, and comprehensive traffic survey services."
             subtitle="Smart Occupancy & Utilization Tracking"
             image="/images/parking_detect.png"
             description="Transform any camera into a smart parking sensor. Our system monitors parking lots in real-time, guiding drivers to available spots and providing facility managers with crucial usage data—all without expensive ground sensors."

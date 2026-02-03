@@ -1,0 +1,190 @@
+/* AccuraCount.css - Premium Styles */
+.ac-hero {
+    position: relative;
+    padding: 8rem 2rem 6rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    overflow: hidden;
+}
+
+.ac-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.ac-hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ac-hero-text p {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.ac-hero-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Section Common */
+.ac-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ac-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.ac-header h2 {
+    font-size: 2.5rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.ac-header p {
+    font-size: 1.1rem;
+    color: #64748b;
+}
+
+/* Manual vs Solution Comparison */
+.ac-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.ac-card {
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.ac-card.manual {
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+.ac-card.solution {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.ac-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.ac-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: #334155;
+}
+
+.ac-icon {
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* Feature Grid */
+.ac-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.ac-feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #f1f5f9;
+}
+
+.ac-feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+}
+
+.ac-feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.ac-feature-card h4 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.ac-feature-card p {
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* CTA */
+.ac-cta {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    border-radius: 30px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 4rem;
+}
+
+.ac-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.ac-cta p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ac-hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .ac-comparison-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ac-hero-text h1 {
+        font-size: 2.5rem;
+    }
+}

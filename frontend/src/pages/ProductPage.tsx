@@ -90,7 +90,7 @@ const ProductPage = (props: ProductPageProps) => {
                         <div className="cta-card">
                             <h3>Ready to get started?</h3>
                             <p>Contact us for a custom quote or demo of our {props.title} solution.</p>
-                            <a href="#contact" className="btn btn-primary full-width">Request Quote</a>
+                            <a href="/contact" className="btn btn-primary full-width">Request Quote</a>
                         </div>
                     </div>
                 </div>
