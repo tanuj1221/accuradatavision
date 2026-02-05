@@ -7,7 +7,7 @@ const About = () => {
         <div className="about-images-grid">
           <div className="grid-image large">
             <img
-              src="/images/analysis_detect.jpg"
+              src="/images/long_trajectories.jpg"
               alt="Traffic Detection"
             />
             <span className="image-label">Traffic Survey</span>

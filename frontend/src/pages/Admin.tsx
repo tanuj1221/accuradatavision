@@ -393,6 +393,7 @@ const Admin = () => {
                                                 <option value="people-counting">People Counting</option>
                                                 <option value="parking-management">Parking Management</option>
                                                 <option value="safety-monitoring">Safety Monitoring</option>
+                                                <option value="contact">Contact</option>
                                             </select>
                                         </div>
                                         <div style={{ display: 'flex', gap: '15px' }}>
