@@ -1,7 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './ProductPage.css';
+
+interface FAQ {
+    id: number;
+    question: string;
+    answer: string;
+    display_order: number;
+    is_active: number;
+}
 
 interface ProductPageProps {
     title: string;
@@ -13,12 +21,22 @@ interface ProductPageProps {
     specs: { label: string; value: string }[];
     metaTitle?: string;
     metaDescription?: string;
+    pageCategory?: string;
 }
 
 const ProductPage = (props: ProductPageProps) => {
+    const [faqs, setFaqs] = useState<FAQ[]>([]);
+
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+        // Fetch FAQs if pageCategory is provided
+        if (props.pageCategory) {
+            fetch(`/api/faqs?page=${props.pageCategory}`)
+                .then(res => res.json())
+                .then(data => setFaqs(data.faqs || []))
+                .catch(err => console.error('Error fetching FAQs:', err));
+        }
+    }, [props.pageCategory]);
 
     const pageTitle = props.metaTitle || `${props.title} - Accura Datavision`;
     const pageDescription = props.metaDescription || props.description;
@@ -95,6 +113,39 @@ const ProductPage = (props: ProductPageProps) => {
                     </div>
                 </div>
             </div>
+
+            {/* FAQ Section */}
+            {faqs.length > 0 && (
+                <section style={{ padding: '60px 20px', backgroundColor: '#f8fafc' }}>
+                    <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
+                        <h2 style={{ textAlign: 'center', marginBottom: '40px', fontSize: '2rem', color: '#1e40af' }}>
+                            Frequently Asked Questions
+                        </h2>
+                        <div className="faq-list">
+                            {faqs.map((faq, index) => (
+                                <div 
+                                    key={faq.id} 
+                                    style={{ 
+                                        borderBottom: index === faqs.length - 1 ? 'none' : '1px solid #e2e8f0', 
+                                        paddingBottom: '20px',
+                                        backgroundColor: 'white',
+                                        padding: '20px',
+                                        borderRadius: '8px',
+                                        marginBottom: index === faqs.length - 1 ? '0' : '15px'
+                                    }}
+                                >
+                                    <h3 style={{ color: '#1e40af', marginBottom: '10px', fontSize: '1.1rem' }}>
+                                        {faq.question}
+                                    </h3>
+                                    <p style={{ color: '#64748b', lineHeight: '1.6', margin: 0 }}>
+                                        {faq.answer}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
 
             <div className="back-link-container">
                 <Link to="/" className="back-link">← Back to Home</Link>

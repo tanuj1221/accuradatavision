@@ -1,11 +1,26 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './TrafficSurvey.css';
 
+interface FAQ {
+    id: number;
+    question: string;
+    answer: string;
+    display_order: number;
+    is_active: number;
+}
+
 const TrafficSurvey = () => {
+    const [faqs, setFaqs] = useState<FAQ[]>([]);
+
     useEffect(() => {
         window.scrollTo(0, 0);
+        // Fetch FAQs from API
+        fetch('/api/faqs?page=traffic-survey')
+            .then(res => res.json())
+            .then(data => setFaqs(data.faqs || []))
+            .catch(err => console.error('Error fetching FAQs:', err));
     }, []);
 
     const scrollToContact = () => {
@@ -361,138 +376,52 @@ const TrafficSurvey = () => {
                     </h2>
                     
                     <div className="faq-list">
-                        <div className="faq-item" style={{ marginBottom: '30px', borderBottom: '1px solid #e2e8f0', paddingBottom: '25px' }}>
-                            <h3 style={{ color: '#1e40af', marginBottom: '12px', fontSize: '1.3rem' }}>
-                                What is the difference between TMC and AADT?
-                            </h3>
-                            <p style={{ color: '#64748b', lineHeight: '1.7' }}>
-                                TMC (Turning Movement Count) tracks directional movements at intersections—left turns, right turns, through movements, and U-turns. AADT (Annual Average Daily Traffic) measures the total volume of vehicles passing a point over a year, averaged per day. TMC is critical for intersection design and signal timing, while AADT is used for highway planning and pavement design.
-                            </p>
-                        </div>
-
-                        <div className="faq-item" style={{ marginBottom: '30px', borderBottom: '1px solid #e2e8f0', paddingBottom: '25px' }}>
-                            <h3 style={{ color: '#1e40af', marginBottom: '12px', fontSize: '1.3rem' }}>
-                                How much does a traffic survey cost?
-                            </h3>
-                            <p style={{ color: '#64748b', lineHeight: '1.7' }}>
-                                Costs vary based on survey duration, location complexity, and data requirements. A basic TMC at a single intersection typically ranges from $800-$1,500, while comprehensive multi-day AADT studies with vehicle classification can range from $2,000-$5,000. We offer custom quotes based on your specific needs—contact us for a free consultation.
-                            </p>
-                        </div>
-
-                        <div className="faq-item" style={{ marginBottom: '30px', borderBottom: '1px solid #e2e8f0', paddingBottom: '25px' }}>
-                            <h3 style={{ color: '#1e40af', marginBottom: '12px', fontSize: '1.3rem' }}>
-                                How accurate are your traffic counts?
-                            </h3>
-                            <p style={{ color: '#64748b', lineHeight: '1.7' }}>
-                                Our AI-powered video analysis combined with expert verification achieves over 97% accuracy, exceeding industry standards. We handle complex scenarios like vehicle occlusion, low camera angles, and adverse weather conditions. All data is validated by trained analysts before delivery.
-                            </p>
-                        </div>
-
-                        <div className="faq-item" style={{ marginBottom: '30px', borderBottom: '1px solid #e2e8f0', paddingBottom: '25px' }}>
-                            <h3 style={{ color: '#1e40af', marginBottom: '12px', fontSize: '1.3rem' }}>
-                                What data formats do you provide?
-                            </h3>
-                            <p style={{ color: '#64748b', lineHeight: '1.7' }}>
-                                We deliver data in industry-standard formats including FHWA Scheme F, Excel spreadsheets, CSV files, and custom formats to match your traffic modeling software (VISSIM, Synchro, HCS). Reports include peak hour analysis, hourly summaries, and 15-minute interval breakdowns.
-                            </p>
-                        </div>
-
-                        <div className="faq-item" style={{ marginBottom: '30px', borderBottom: '1px solid #e2e8f0', paddingBottom: '25px' }}>
-                            <h3 style={{ color: '#1e40af', marginBottom: '12px', fontSize: '1.3rem' }}>
-                                Do you serve international locations?
-                            </h3>
-                            <p style={{ color: '#64748b', lineHeight: '1.7' }}>
-                                Yes! We provide traffic survey services across the United States, United Kingdom, Europe (including Germany, France, Netherlands), Australia, and globally. Our video-based approach allows us to analyze CCTV footage from any location. We're familiar with regional standards including FHWA (US), DMRB (UK), and local specifications.
-                            </p>
-                        </div>
-
-                        <div className="faq-item" style={{ marginBottom: '30px', borderBottom: '1px solid #e2e8f0', paddingBottom: '25px' }}>
-                            <h3 style={{ color: '#1e40af', marginBottom: '12px', fontSize: '1.3rem' }}>
-                                How long does a traffic survey take?
-                            </h3>
-                            <p style={{ color: '#64748b', lineHeight: '1.7' }}>
-                                Data collection varies from 1-7 days depending on requirements. TMC studies typically need 12-24 hours during peak periods. AADT requires 48-hour minimum counts with factor adjustments. Our AI processing delivers results within 24-48 hours after footage collection, much faster than traditional manual counting.
-                            </p>
-                        </div>
-
-                        <div className="faq-item" style={{ marginBottom: '30px', paddingBottom: '25px' }}>
-                            <h3 style={{ color: '#1e40af', marginBottom: '12px', fontSize: '1.3rem' }}>
-                                Can you use existing CCTV cameras?
-                            </h3>
-                            <p style={{ color: '#64748b', lineHeight: '1.7' }}>
-                                Absolutely! We can analyze footage from your existing CCTV infrastructure, saving equipment and installation costs. Our AI works with various camera types, angles, and resolutions. If existing cameras aren't suitable, we can deploy temporary high-resolution cameras optimized for traffic analysis.
-                            </p>
-                        </div>
+                        {faqs.length === 0 ? (
+                            <div style={{ textAlign: 'center', color: '#64748b', padding: '40px 0' }}>
+                                No FAQs available at the moment.
+                            </div>
+                        ) : (
+                            faqs.map((faq, index) => (
+                                <div 
+                                    key={faq.id} 
+                                    className="faq-item" 
+                                    style={{ 
+                                        marginBottom: '30px', 
+                                        borderBottom: index === faqs.length - 1 ? 'none' : '1px solid #e2e8f0', 
+                                        paddingBottom: '25px' 
+                                    }}
+                                >
+                                    <h3 style={{ color: '#1e40af', marginBottom: '12px', fontSize: '1.3rem' }}>
+                                        {faq.question}
+                                    </h3>
+                                    <p style={{ color: '#64748b', lineHeight: '1.7' }}>
+                                        {faq.answer}
+                                    </p>
+                                </div>
+                            ))
+                        )}
                     </div>
                 </div>
 
                 {/* FAQ Schema Markup */}
-                <Helmet>
-                    <script type="application/ld+json">
-                        {JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "FAQPage",
-                            "mainEntity": [
-                                {
+                {faqs.length > 0 && (
+                    <Helmet>
+                        <script type="application/ld+json">
+                            {JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "FAQPage",
+                                "mainEntity": faqs.map(faq => ({
                                     "@type": "Question",
-                                    "name": "What is the difference between TMC and AADT?",
+                                    "name": faq.question,
                                     "acceptedAnswer": {
                                         "@type": "Answer",
-                                        "text": "TMC (Turning Movement Count) tracks directional movements at intersections—left turns, right turns, through movements, and U-turns. AADT (Annual Average Daily Traffic) measures the total volume of vehicles passing a point over a year, averaged per day. TMC is critical for intersection design and signal timing, while AADT is used for highway planning and pavement design."
+                                        "text": faq.answer
                                     }
-                                },
-                                {
-                                    "@type": "Question",
-                                    "name": "How much does a traffic survey cost?",
-                                    "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "Costs vary based on survey duration, location complexity, and data requirements. A basic TMC at a single intersection typically ranges from $800-$1,500, while comprehensive multi-day AADT studies with vehicle classification can range from $2,000-$5,000."
-                                    }
-                                },
-                                {
-                                    "@type": "Question",
-                                    "name": "How accurate are your traffic counts?",
-                                    "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "Our AI-powered video analysis combined with expert verification achieves over 97% accuracy, exceeding industry standards. We handle complex scenarios like vehicle occlusion, low camera angles, and adverse weather conditions."
-                                    }
-                                },
-                                {
-                                    "@type": "Question",
-                                    "name": "What data formats do you provide?",
-                                    "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "We deliver data in industry-standard formats including FHWA Scheme F, Excel spreadsheets, CSV files, and custom formats to match your traffic modeling software (VISSIM, Synchro, HCS). Reports include peak hour analysis, hourly summaries, and 15-minute interval breakdowns."
-                                    }
-                                },
-                                {
-                                    "@type": "Question",
-                                    "name": "Do you serve international locations?",
-                                    "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "Yes! We provide traffic survey services across the United States, United Kingdom, Europe (including Germany, France, Netherlands), Australia, and globally. Our video-based approach allows us to analyze CCTV footage from any location."
-                                    }
-                                },
-                                {
-                                    "@type": "Question",
-                                    "name": "How long does a traffic survey take?",
-                                    "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "Data collection varies from 1-7 days depending on requirements. TMC studies typically need 12-24 hours during peak periods. AADT requires 48-hour minimum counts with factor adjustments. Our AI processing delivers results within 24-48 hours after footage collection."
-                                    }
-                                },
-                                {
-                                    "@type": "Question",
-                                    "name": "Can you use existing CCTV cameras?",
-                                    "acceptedAnswer": {
-                                        "@type": "Answer",
-                                        "text": "Absolutely! We can analyze footage from your existing CCTV infrastructure, saving equipment and installation costs. Our AI works with various camera types, angles, and resolutions."
-                                    }
-                                }
-                            ]
-                        })}
-                    </script>
-                </Helmet>
+                                }))
+                            })}
+                        </script>
+                    </Helmet>
+                )}
             </section>
 
             {/* CTA Section */}

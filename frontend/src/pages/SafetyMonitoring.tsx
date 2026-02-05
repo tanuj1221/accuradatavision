@@ -9,6 +9,7 @@ const SafetyMonitoring = () => {
             subtitle="Proactive Anomaly Detection & Security"
             image="/images/ppe_detect.png"
             description="Enhance security with proactive AI monitoring. Our system automatically detects anomalies, unauthorized access, and safety hazards, sending instant alerts to security personnel so they can react before incidents escalate."
+            pageCategory="safety-monitoring"
             features={[
                 "Intrusion Detection/Perimeter Protection",
                 "Loitering & Suspicious Behavior Analysis",

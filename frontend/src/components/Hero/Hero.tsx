@@ -37,7 +37,7 @@ const Hero = () => {
       </div>
       <div className="hero-video">
         <video autoPlay muted loop playsInline>
-          <source src="/vis3_web.mp4" type="video/mp4" />
+          <source src="/videos/m12_enhanced_compressed.mp4" type="video/mp4" />
         </video>
         <div className="hero-video-overlay"></div>
       </div>

@@ -50,6 +50,29 @@ const db = new sqlite3.Database('./contact.db', (err) => {
         )`, (err) => {
             if (err) console.error('Error creating visitors table:', err.message);
         });
+
+        // Create FAQs table
+        db.run(`CREATE TABLE IF NOT EXISTS faqs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            question TEXT NOT NULL,
+            answer TEXT NOT NULL,
+            page_category TEXT DEFAULT 'general',
+            display_order INTEGER DEFAULT 0,
+            is_active INTEGER DEFAULT 1,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        )`, (err) => {
+            if (err) console.error('Error creating faqs table:', err.message);
+            else {
+                console.log('FAQs table ready.');
+                // Add page_category column if it doesn't exist (migration)
+                db.run(`ALTER TABLE faqs ADD COLUMN page_category TEXT DEFAULT 'general'`, (err) => {
+                    if (err && !err.message.includes('duplicate column')) {
+                        console.error('Migration warning (page_category):', err.message);
+                    }
+                });
+            }
+        });
     }
 });
 
@@ -218,6 +241,127 @@ app.get('/api/admin/visitors', (req, res) => {
         res.json({ visitors: rows });
     });
 });
+
+// ===== FAQ MANAGEMENT ROUTES =====
+
+// Public: Get all active FAQs (with optional page filter)
+app.get('/api/faqs', (req, res) => {
+    const { page } = req.query;
+    let sql = "SELECT * FROM faqs WHERE is_active = 1";
+    let params = [];
+    
+    if (page) {
+        sql += " AND page_category = ?";
+        params.push(page);
+    }
+    
+    sql += " ORDER BY display_order ASC, id ASC";
+    
+    db.all(sql, params, (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json({ faqs: rows });
+    });
+});
+
+// Admin: Get all FAQs (including inactive)
+app.get('/api/admin/faqs', (req, res) => {
+    const token = req.headers.authorization;
+    if (!token || token !== process.env.ADMIN_PASS) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    db.all("SELECT * FROM faqs ORDER BY display_order ASC, id ASC", [], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json({ faqs: rows });
+    });
+});
+
+// Admin: Create new FAQ
+app.post('/api/admin/faqs', (req, res) => {
+    const token = req.headers.authorization;
+    if (!token || token !== process.env.ADMIN_PASS) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    const { question, answer, display_order, page_category } = req.body;
+    
+    if (!question || !answer) {
+        return res.status(400).json({ error: 'Question and answer are required' });
+    }
+
+    const sql = `INSERT INTO faqs (question, answer, display_order, page_category) VALUES (?, ?, ?, ?)`;
+    db.run(sql, [question, answer, display_order || 0, page_category || 'general'], function (err) {
+        if (err) {
+            console.error('Error creating FAQ:', err.message);
+            return res.status(500).json({ error: 'Failed to create FAQ' });
+        }
+
+        res.status(201).json({ 
+            message: 'FAQ created successfully',
+            id: this.lastID
+        });
+    });
+});
+
+// Admin: Update FAQ
+app.put('/api/admin/faqs/:id', (req, res) => {
+    const token = req.headers.authorization;
+    if (!token || token !== process.env.ADMIN_PASS) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    const { id } = req.params;
+    const { question, answer, display_order, is_active, page_category } = req.body;
+
+    if (!question || !answer) {
+        return res.status(400).json({ error: 'Question and answer are required' });
+    }
+
+    const sql = `UPDATE faqs SET question = ?, answer = ?, display_order = ?, is_active = ?, page_category = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?`;
+    db.run(sql, [question, answer, display_order || 0, is_active !== undefined ? is_active : 1, page_category || 'general', id], function (err) {
+        if (err) {
+            console.error('Error updating FAQ:', err.message);
+            return res.status(500).json({ error: 'Failed to update FAQ' });
+        }
+
+        if (this.changes === 0) {
+            return res.status(404).json({ error: 'FAQ not found' });
+        }
+
+        res.json({ message: 'FAQ updated successfully' });
+    });
+});
+
+// Admin: Delete FAQ
+app.delete('/api/admin/faqs/:id', (req, res) => {
+    const token = req.headers.authorization;
+    if (!token || token !== process.env.ADMIN_PASS) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    const { id } = req.params;
+    
+    db.run(`DELETE FROM faqs WHERE id = ?`, [id], function (err) {
+        if (err) {
+            console.error('Error deleting FAQ:', err.message);
+            return res.status(500).json({ error: 'Failed to delete FAQ' });
+        }
+
+        if (this.changes === 0) {
+            return res.status(404).json({ error: 'FAQ not found' });
+        }
+
+        res.json({ message: 'FAQ deleted successfully' });
+    });
+});
+
+// ===== END FAQ ROUTES =====
 
 // Serve Frontend (Must be after API routes)
 const path = require('path');

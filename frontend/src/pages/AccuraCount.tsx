@@ -1,10 +1,25 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import './AccuraCount.css';
 
+interface FAQ {
+    id: number;
+    question: string;
+    answer: string;
+    display_order: number;
+    is_active: number;
+}
+
 const AccuraCount = () => {
+    const [faqs, setFaqs] = useState<FAQ[]>([]);
+
     useEffect(() => {
         window.scrollTo(0, 0);
+        // Fetch FAQs from API
+        fetch('/api/faqs?page=accura-count')
+            .then(res => res.json())
+            .then(data => setFaqs(data.faqs || []))
+            .catch(err => console.error('Error fetching FAQs:', err));
     }, []);
 
     return (
@@ -113,6 +128,37 @@ const AccuraCount = () => {
                     </div>
                 </div>
             </section>
+
+            {/* FAQ Section */}
+            {faqs.length > 0 && (
+                <section className="ac-section" style={{ background: '#f8fafc' }}>
+                    <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                        <div className="ac-header">
+                            <h2>Frequently Asked Questions</h2>
+                        </div>
+                        <div className="faq-list">
+                            {faqs.map((faq, index) => (
+                                <div 
+                                    key={faq.id} 
+                                    style={{ 
+                                        backgroundColor: 'white',
+                                        padding: '20px',
+                                        borderRadius: '8px',
+                                        marginBottom: index === faqs.length - 1 ? '0' : '15px'
+                                    }}
+                                >
+                                    <h3 style={{ color: '#1e40af', marginBottom: '10px', fontSize: '1.1rem' }}>
+                                        {faq.question}
+                                    </h3>
+                                    <p style={{ color: '#64748b', lineHeight: '1.6', margin: 0 }}>
+                                        {faq.answer}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* Bottom CTA */}
             <section className="ac-section">

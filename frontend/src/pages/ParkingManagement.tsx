@@ -9,6 +9,7 @@ const ParkingManagement = () => {
             subtitle="Smart Occupancy & Utilization Tracking"
             image="/images/parking_detect.png"
             description="Transform any camera into a smart parking sensor. Our system monitors parking lots in real-time, guiding drivers to available spots and providing facility managers with crucial usage data—all without expensive ground sensors."
+            pageCategory="parking-management"
             features={[
                 "Individual Spot Occupancy Detection",
                 "Real-time Availability Signage Integration",
