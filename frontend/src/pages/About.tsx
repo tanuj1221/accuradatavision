@@ -129,11 +129,17 @@ const About = () => {
           </div>
           <div className="story-content-full">
             <div className="story-image-full">
-              <img 
-                src="/images/tracking_demo.gif" 
-                alt="Traffic analysis and data collection"
-                loading="lazy"
-              />
+            <video 
+                autoPlay
+                loop
+                muted
+                playsInline
+                aria-label="AI Machine Vision based traffic analysis and data collection demonstration"
+                className="story-video"
+              >
+                <source src="/videos/tracking_compressed_15fps.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
             <div className="story-text-full">
               <p>
