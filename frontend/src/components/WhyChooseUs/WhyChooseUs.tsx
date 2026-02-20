@@ -17,7 +17,7 @@ const WhyChooseUs = () => {
     {
       img: '/images/why_choose_us/long_trajectories.jpg',
       title: 'Human Post-Processing',
-      desc: 'Final verification is performed by expert human annotators who rigorously post-process the data, merging complex trajectories to guarantee 97%+ ground-truth accuracy.',
+      desc: 'Final verification is performed by expert human annotators who rigorously post-process the data, merging complex trajectories to guarantee 95%+ ground-truth accuracy.',
       tag: 'Final Result'
     }
   ];
@@ -39,7 +39,11 @@ const WhyChooseUs = () => {
           {steps.map((step, index) => (
             <div className="wcu-step" key={index}>
               <div className="step-image-container">
-                <img src={step.img} alt={step.title} />
+                <img 
+                  src={step.img} 
+                  alt={`${step.title} - ${step.desc.substring(0, 60)}...`}
+                  loading="lazy"
+                />
                 <span className="step-tag">{step.tag}</span>
               </div>
               <div className="step-content">
@@ -55,7 +59,7 @@ const WhyChooseUs = () => {
           <h3>Efficiency Meets Accuracy</h3>
           <p>
             By combining state-of-the-art AI for rapid processing with human verification for edge cases,
-            we deliver <span className="highlight">97%+ accurate data</span> at a fraction of the time and cost of manual surveys.
+            we deliver <span className="highlight">95%+ accurate data</span> at a fraction of the time and cost of manual surveys.
             Get actionable insights faster, without compromising on quality.
           </p>
         </div>

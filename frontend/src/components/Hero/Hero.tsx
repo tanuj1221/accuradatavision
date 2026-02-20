@@ -9,24 +9,24 @@ const Hero = () => {
           Intelligent Vision <span>Solutions</span>
         </h1>
         <p className="hero-subtitle">
-          Advanced AI-powered traffic count and survey solution.
+          Professional traffic survey services with AI Machine Vision based analysis. TMC, AADT, vehicle classification, and comprehensive traffic data collection with 95%+ accuracy.
         </p>
 
         <div className="featured-product">
-          <h3 className="featured-title mb-2">Traffic Survey & Counting</h3>
+          <h3 className="featured-title mb-2">Professional Traffic Survey Services</h3>
           <p className="featured-description mb-3">
-            Accurate AI vehicle counting, classification, and directional analysis.
+            Comprehensive TMC, AADT, vehicle classification, and traffic data analysis with 95%+ accuracy.
           </p>
           <ul className="featured-highlights mb-3">
-            <li>Multi-directional counting</li>
-            <li>Vehicle classification</li>
-            <li>Real-time analytics</li>
-            <li>PDF/Excel reports</li>
+            <li>TMC & AADT Analysis</li>
+            <li>Vehicle Classification</li>
+            <li>Origin-Destination Surveys</li>
+            <li>Peak Hour & Gap Analysis</li>
+            <li>PDF/Excel Reports</li>
           </ul>
-          <div className="featured-pricing">
-            <span className="price-label">From</span>
-            <span className="price-amount">$20</span>
-            <span className="price-period">/ 24h</span>
+          <div className="featured-badge">
+            <span className="badge-icon">✓</span>
+            <span className="badge-text">Custom Quotes Available</span>
           </div>
         </div>
 
@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-video">
-        <video autoPlay muted loop playsInline>
+        <video autoPlay muted loop playsInline aria-label="AI Machine Vision based traffic counting demonstration video">
           <source src="/videos/m12_enhanced_compressed.mp4" type="video/mp4" />
         </video>
         <div className="hero-video-overlay"></div>

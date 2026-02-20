@@ -77,6 +77,64 @@ const Contact = () => {
                 <title>Contact - TMC, AADT, Traffic Survey Services | US, UK, Europe, Australia</title>
                 <meta name="description" content="Contact Accura Datavision for professional TMC (Turning Movement Count), AADT, traffic volume studies, vehicle classification, pedestrian counting services in US, UK, Europe, Australia, Germany. Get expert traffic data collection, intersection analysis, origin-destination surveys. Request a quote for transportation planning and traffic engineering projects." />
                 <meta name="keywords" content="TMC quote, AADT services, traffic survey contact, turning movement count, vehicle classification quote, traffic volume studies, pedestrian counting services, intersection analysis, traffic data collection USA, UK traffic survey quote, Europe TMC services, Australia AADT, Germany traffic survey, request traffic survey quote, transportation planning services, traffic engineering consultation" />
+                <link rel="canonical" href="https://accuradatavision.com/contact" />
+                
+                {/* Open Graph Tags */}
+                <meta property="og:title" content="Contact - TMC, AADT, Traffic Survey Services | Accura Datavision" />
+                <meta property="og:description" content="Contact Accura Datavision for professional TMC, AADT, traffic volume studies, vehicle classification services. Get expert traffic data collection and analysis." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://accuradatavision.com/contact" />
+                <meta property="og:image" content="https://accuradatavision.com/images/traffic_detect.jpg" />
+                <meta property="og:site_name" content="Accura Datavision" />
+                
+                {/* Twitter Card Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Contact - TMC, AADT, Traffic Survey Services" />
+                <meta name="twitter:description" content="Contact Accura Datavision for professional TMC, AADT, traffic volume studies, vehicle classification services." />
+                <meta name="twitter:image" content="https://accuradatavision.com/images/traffic_detect.jpg" />
+                
+                {/* Additional SEO Meta Tags */}
+                <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+                <meta name="author" content="Accura Datavision" />
+                
+                {/* Structured Data - ContactPage */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "ContactPage",
+                        "name": "Contact Accura Datavision",
+                        "description": "Contact us for professional TMC, AADT, traffic volume studies, vehicle classification, and traffic survey services.",
+                        "mainEntity": {
+                            "@type": "Organization",
+                            "name": "Accura Datavision",
+                            "telephone": "+91-7249417317",
+                            "email": "support@accuradatavision.com",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "addressLocality": "Mumbai",
+                                "addressCountry": "IN"
+                            }
+                        }
+                    })}
+                </script>
+                
+                {/* FAQ Schema */}
+                {faqs.length > 0 && (
+                    <script type="application/ld+json">
+                        {JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            "mainEntity": faqs.map(faq => ({
+                                "@type": "Question",
+                                "name": faq.question,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": faq.answer
+                                }
+                            }))
+                        })}
+                    </script>
+                )}
             </Helmet>
             
             {/* Hero Section */}
@@ -85,7 +143,7 @@ const Contact = () => {
                     <span className="contact-label">Get In Touch</span>
                     <h1>Let's Transform Your Vision Into Reality</h1>
                     <p>
-                        Ready to optimize your infrastructure with AI-powered analytics? Our team of experts is here to help you get started with the right solution for your needs.
+                        Ready to optimize your infrastructure with AI Machine Vision based analytics? Our team of experts is here to help you get started with the right solution for your needs.
                     </p>
                 </div>
             </section>
@@ -106,7 +164,7 @@ const Contact = () => {
                             <div className="info-icon">✉️</div>
                             <h3>Email Us</h3>
                             <p>Our team will respond within 24 hours</p>
-                            <a href="mailto:admin@accuradatavision.com" className="info-link">admin@accuradatavision.com</a>
+                            <a href="mailto:support@accuradatavision.com" className="info-link">support@accuradatavision.com</a>
                         </div>
 
                         <div className="info-card">
@@ -273,10 +331,10 @@ const Contact = () => {
             <section className="trust-section">
                 <div className="trust-content">
                     <h2>Trusted by Leading Organizations</h2>
-                    <p>Join city planners, engineering firms, and enterprises who rely on our AI-powered solutions for accurate, real-time insights.</p>
+                    <p>Join city planners, engineering firms, and enterprises who rely on our AI Machine Vision based solutions for accurate, real-time insights.</p>
                     <div className="trust-stats">
                         <div className="stat-item">
-                            <div className="stat-number">97%+</div>
+                            <div className="stat-number">95%+</div>
                             <div className="stat-label">Accuracy Rate</div>
                         </div>
                         <div className="stat-item">
@@ -284,8 +342,8 @@ const Contact = () => {
                             <div className="stat-label">Support Available</div>
                         </div>
                         <div className="stat-item">
-                            <div className="stat-number">100+</div>
-                            <div className="stat-label">Projects Delivered</div>
+                            <div className="stat-number">9000+</div>
+                            <div className="stat-label">Hours Computed & Delivered</div>
                         </div>
                     </div>
                 </div>

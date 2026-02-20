@@ -1,0 +1,243 @@
+.clients-section {
+  padding: 100px 20px;
+  background: white;
+}
+
+.clients-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 30px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.clients-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.clients-title span {
+  color: #3b82f6;
+}
+
+.clients-subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.client-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.client-category {
+  background: #f8fafc;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #3b82f6;
+}
+
+.client-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.client-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.client-icon {
+  color: #10b981;
+  font-weight: 700;
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+.testimonials-section {
+  margin-top: 80px;
+}
+
+.testimonials-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.testimonial-card {
+  background: #f8fafc;
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: #3b82f6;
+}
+
+.testimonial-quote {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.quote-icon {
+  font-size: 4rem;
+  color: #3b82f6;
+  opacity: 0.2;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  font-family: Georgia, serif;
+}
+
+.testimonial-quote p {
+  font-size: 1.0625rem;
+  color: #475569;
+  line-height: 1.7;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.author-info strong {
+  color: #1e293b;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.author-info span {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.author-location {
+  color: #94a3b8 !important;
+  font-size: 0.8125rem !important;
+}
+
+.clients-cta {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  border-radius: 16px;
+  color: white;
+  margin-top: 60px;
+}
+
+.clients-cta p {
+  font-size: 1.25rem;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 14px 32px;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.clients-loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: #64748b;
+  font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .clients-section {
+    padding: 60px 20px;
+  }
+
+  .clients-title {
+    font-size: 2rem;
+  }
+
+  .client-categories {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 25px;
+  }
+}
+

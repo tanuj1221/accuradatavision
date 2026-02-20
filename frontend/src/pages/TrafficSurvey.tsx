@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Features from '../components/Features';
 import './TrafficSurvey.css';
 
 interface FAQ {
@@ -34,9 +35,63 @@ const TrafficSurvey = () => {
         <div className="traffic-survey-page">
             <Helmet>
                 <title>TMC, AADT, Vehicle Classification | Traffic Survey Services | US, UK, Europe, Australia</title>
-                <meta name="description" content="Professional TMC (Turning Movement Count), AADT, traffic volume studies, vehicle classification, pedestrian & cyclist counting in US, UK, Europe, Australia, Germany. AI-powered intersection analysis, origin-destination surveys, peak hour studies, gap analysis with 97%+ accuracy. Expert CCTV traffic surveys and data collection." />
-                <meta name="keywords" content="TMC services, turning movement count, AADT, annual average daily traffic, traffic volume studies, vehicle classification, pedestrian counting, cyclist counting, intersection analysis, origin destination survey, peak hour analysis, gap analysis, speed studies, traffic data collection, automated traffic counting, video traffic survey, manual traffic counts, CCTV traffic counting, traffic engineering services, transportation planning, highway survey, road traffic survey, junction survey, roundabout analysis, multi-modal survey, level of service, USA traffic survey, UK TMC, Europe traffic studies, Australia AADT, Germany vehicle classification" />
+                <meta name="description" content="Professional TMC (Turning Movement Count), AADT, traffic volume studies, vehicle classification, link count analysis, queue length detection, journey time tracking, roundabout analysis, density heatmaps, speed analysis, near miss detection, O-D matrix analysis, peak hour studies, traffic flow patterns, incident detection in US, UK, Europe, Australia, Germany. AI Machine Vision based intersection analysis with 95%+ accuracy, 60% faster delivery. Expert CCTV traffic surveys and data collection with exportable PDF, Excel, CSV reports." />
+                <meta name="keywords" content="TMC services, turning movement count, AADT, annual average daily traffic, traffic volume studies, vehicle classification, link count analysis, queue length detection, journey time tracking, roundabout analysis, density heatmap, dual time heatmap, road coverage heatmap, peak hours analysis, speed analysis, near miss detection, O-D matrix analysis, origin destination matrix, traffic flow patterns, incident detection, parking management, pedestrian counting, cyclist counting, intersection analysis, origin destination survey, gap analysis, traffic data collection, automated traffic counting, video traffic survey, CCTV traffic counting, traffic engineering services, transportation planning, highway survey, road traffic survey, junction survey, exportable reports PDF Excel CSV, USA traffic survey, UK TMC, Europe traffic studies, Australia AADT, Germany vehicle classification" />
                 <link rel="canonical" href="https://accuradatavision.com/traffic-survey" />
+                
+                {/* Open Graph Tags */}
+                <meta property="og:title" content="TMC, AADT, Vehicle Classification | Traffic Survey Services | US, UK, Europe, Australia" />
+                <meta property="og:description" content="Professional TMC (Turning Movement Count), AADT, traffic volume studies, vehicle classification with 95%+ accuracy. Serving US, UK, Europe, Australia, Germany." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://accuradatavision.com/traffic-survey" />
+                <meta property="og:image" content="https://accuradatavision.com/images/traffic_detect.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:site_name" content="Accura Datavision" />
+                
+                {/* Twitter Card Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="TMC, AADT, Vehicle Classification | Traffic Survey Services" />
+                <meta name="twitter:description" content="Professional TMC, AADT, traffic volume studies with 95%+ accuracy. Serving US, UK, Europe, Australia, Germany." />
+                <meta name="twitter:image" content="https://accuradatavision.com/images/traffic_detect.jpg" />
+                
+                {/* Additional SEO Meta Tags */}
+                <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+                <meta name="author" content="Accura Datavision" />
+                
+                {/* Structured Data - Service */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "name": "Traffic Survey Services - TMC, AADT, Vehicle Classification",
+                        "description": "Professional TMC (Turning Movement Count), AADT, traffic volume studies, vehicle classification, pedestrian & cyclist counting with 95%+ accuracy using AI Machine Vision based video analytics.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Accura Datavision",
+                            "url": "https://accuradatavision.com",
+                            "telephone": "+91-7249417317",
+                            "email": "support@accuradatavision.com"
+                        },
+                        "areaServed": [
+                            {"@type": "Country", "name": "United States"},
+                            {"@type": "Country", "name": "United Kingdom"},
+                            {"@type": "Country", "name": "Australia"},
+                            {"@type": "Country", "name": "Germany"}
+                        ],
+                        "serviceType": [
+                            "TMC - Turning Movement Count",
+                            "AADT - Annual Average Daily Traffic",
+                            "Traffic Volume Studies",
+                            "Vehicle Classification",
+                            "Pedestrian Counting",
+                            "Cyclist Counting",
+                            "Intersection Analysis",
+                            "Origin-Destination Surveys"
+                        ],
+                        "image": "https://accuradatavision.com/images/traffic_detect.jpg"
+                    })}
+                </script>
             </Helmet>
 
             {/* Hero Section */}
@@ -44,7 +99,7 @@ const TrafficSurvey = () => {
                 <div className="ts-split-bg">
                     <div className="ts-split-left" style={{ backgroundImage: 'url("/images/long_trajectories.jpg")' }}></div>
                     <div className="ts-split-right">
-                        <video autoPlay loop muted playsInline className="ts-hero-video">
+                        <video autoPlay loop muted playsInline className="ts-hero-video" aria-label="AI Machine Vision based vehicle tracking demonstration for traffic survey">
                             <source src="/videos/tracking_compressed_15fps.mp4" type="video/mp4" />
                         </video>
                     </div>
@@ -53,9 +108,9 @@ const TrafficSurvey = () => {
                 <div className="ts-hero-overlay"></div>
                 <div className="ts-hero-content">
                     <span className="ts-hero-label">Next-Gen Traffic Analytics</span>
-                    <h1>Precision Data Through <br /> Advanced AI & Verification.</h1>
+                    <h1>Precision Data Through <br /> Advanced AI Machine Vision & Verification.</h1>
                     <p>
-                        Our advanced tracker handles complex occlusions—even at low camera heights. We use AI to identify problematic trajectories and ID shifts, then apply expert analyst verification to post-process the data, guaranteeing over 97% accuracy.
+                        Our advanced tracker handles complex occlusions—even at low camera heights. We use AI Machine Vision technology to identify problematic trajectories and ID shifts, then apply expert analyst verification to post-process the data, guaranteeing over 95% accuracy.
                     </p>
                     <div className="ts-btn-group">
                         <button onClick={scrollToContact} className="ts-btn ts-btn-primary">
@@ -102,8 +157,8 @@ const TrafficSurvey = () => {
                                 borderRadius: '4px',
                                 fontSize: '0.8rem',
                                 zIndex: 10
-                            }}>Industry vs Accura AI</div>
-                            <video controls autoPlay loop muted playsInline style={{ width: '100%', display: 'block' }}>
+                            }}>Industry vs Accura Machine Vision</div>
+                            <video controls autoPlay loop muted playsInline style={{ width: '100%', display: 'block' }} aria-label="Comparison video showing industry standard vs Accura Machine Vision traffic tracking accuracy">
                                 <source src="/videos/v1_og_3way_comparison_web.mp4" type="video/mp4" />
                             </video>
                         </div>
@@ -125,7 +180,7 @@ const TrafficSurvey = () => {
                     <div className="process-step">
                         <div className="step-number">01</div>
                         <div className="step-content">
-                            <img src="/images/v5_scene_context_web.jpg" alt="Scene Setup" />
+                            <img src="/images/v5_scene_context_web.jpg" alt="Video input and region of interest definition for traffic survey analysis" loading="lazy" />
                             <h3>Video Input & ROI</h3>
                             <p>Define regions of interest from any CCTV footage</p>
                         </div>
@@ -134,8 +189,8 @@ const TrafficSurvey = () => {
                     <div className="process-step">
                         <div className="step-number">02</div>
                         <div className="step-content">
-                            <img src="/images/tracking_demo.gif" alt="AI Detection" />
-                            <h3>AI Detection & Tracking</h3>
+                            <img src="/images/tracking_demo.gif" alt="AI Machine Vision based vehicle detection and tracking system for traffic counting" loading="lazy" />
+                            <h3>AI Machine Vision Detection & Tracking</h3>
                             <p>Real-time vehicle identification with unique IDs</p>
                         </div>
                     </div>
@@ -143,7 +198,7 @@ const TrafficSurvey = () => {
                     <div className="process-step">
                         <div className="step-number">03</div>
                         <div className="step-content">
-                            <img src="/images/tracking_output.jpg" alt="Trajectory Output" />
+                            <img src="/images/tracking_output.jpg" alt="Vehicle trajectory analysis showing complete movement patterns and path mapping" loading="lazy" />
                             <h3>Trajectory Analysis</h3>
                             <p>Complete movement visualization and path mapping</p>
                         </div>
@@ -152,25 +207,25 @@ const TrafficSurvey = () => {
                     <div className="process-step">
                         <div className="step-number">04</div>
                         <div className="step-content">
-                            <img src="/images/ai_verification_analysis.jpg" alt="AI Verification Analysis" />
-                            <h3>AI + Manual Verification</h3>
-                            <p>Detect outliers, ID switches & occlusions with AI algorithms and expert review</p>
+                            <img src="/images/ai_verification_analysis.jpg" alt="AI Machine Vision and manual verification process for detecting outliers and ID switches in traffic data" loading="lazy" />
+                            <h3>AI Machine Vision + Manual Verification</h3>
+                            <p>Detect outliers, ID switches & occlusions with AI Machine Vision algorithms and expert review</p>
                         </div>
                     </div>
 
                     <div className="process-step">
                         <div className="step-number">05</div>
                         <div className="step-content">
-                            <img src="/images/long_trajectories_web.jpg" alt="Post Processed Data" />
+                            <img src="/images/long_trajectories_web.jpg" alt="Post-processed traffic data with 95% accuracy ready for TMC and AADT analysis" loading="lazy" />
                             <h3>Post-Processed Data</h3>
-                            <p>98%+ accurate trajectory data ready for analysis</p>
+                            <p>95%+ accurate trajectory data ready for analysis</p>
                         </div>
                     </div>
 
                     <div className="process-step">
                         <div className="step-number">06</div>
                         <div className="step-content">
-                            <img src="/images/visualization_window_web.jpg" alt="Accura Count Software" />
+                            <img src="/images/visualization_window_web.jpg" alt="AccuraCount software interface for traffic data visualization and analysis" loading="lazy" />
                             <h3>Accura Count Visualization</h3>
                             <p>Visualize data your way with our powerful analysis platform</p>
                         </div>
@@ -190,13 +245,13 @@ const TrafficSurvey = () => {
                     </div>
                     <div className="ac-video-grid">
                         <div className="ac-video-item">
-                            <video src="/videos/ac_counting.mp4" autoPlay loop muted playsInline />
+                            <video src="/videos/ac_counting.mp4" autoPlay loop muted playsInline aria-label="AccuraCount software demonstrating vehicle counting and TMC analysis" />
                         </div>
                         <div className="ac-video-item">
-                            <video src="/videos/ac_lanes.mp4" autoPlay loop muted playsInline />
+                            <video src="/videos/ac_lanes.mp4" autoPlay loop muted playsInline aria-label="AccuraCount software showing lane analysis and traffic distribution" />
                         </div>
                         <div className="ac-video-item">
-                            <video src="/videos/ac_statistics.mp4" autoPlay loop muted playsInline />
+                            <video src="/videos/ac_statistics.mp4" autoPlay loop muted playsInline aria-label="AccuraCount software displaying traffic statistics and analytics dashboard" />
                         </div>
                     </div>
                 </header>
@@ -251,7 +306,7 @@ const TrafficSurvey = () => {
                         <h2>Beyond Manual Counting</h2>
                         <p>
                             At AccuraDataVision, we’ve built a powerful client-side traffic analysis platform that allows
-                            teams to visualize processed tracking data and generate complete survey-ready outputs with 97%+ accuracy.
+                            teams to visualize processed tracking data and generate complete survey-ready outputs with 95%+ accuracy.
                         </p>
                     </div>
 
@@ -270,9 +325,9 @@ const TrafficSurvey = () => {
 
                         <div className="ac-card solution">
                             <h3>✅ The Accura Solution</h3>
-                            <p style={{ marginBottom: '1rem', color: '#166534' }}>Our solution combines AI-based tracking with human intelligence validation for edge cases, delivering reliable, survey-grade analytics.</p>
+                            <p style={{ marginBottom: '1rem', color: '#166534' }}>Our solution combines AI Machine Vision based tracking with human intelligence validation for edge cases, delivering reliable, survey-grade analytics.</p>
                             <ul className="ac-list">
-                                <li><span className="ac-icon">✅</span> AI-based tracking results</li>
+                                <li><span className="ac-icon">✅</span> AI Machine Vision based tracking results</li>
                                 <li><span className="ac-icon">✅</span> Human intelligence validation</li>
                                 <li><span className="ac-icon">✅</span> Complete spatial awareness</li>
                                 <li><span className="ac-icon">✅</span> Reliable, survey-grade analytics</li>
@@ -294,7 +349,7 @@ const TrafficSurvey = () => {
                 <div className="why-grid">
                     <div className="why-card">
                         <div className="why-icon">🎯</div>
-                        <h3>97%+ Proven Accuracy</h3>
+                        <h3>95%+ Proven Accuracy</h3>
                         <p>
                             Unlike standard off-the-shelf models, our system is fine-tuned on diverse urban environments. Every dataset is human-verified to ensure ground-truth alignment.
                         </p>
@@ -316,6 +371,9 @@ const TrafficSurvey = () => {
                 </div>
             </section>
 
+            {/* Comprehensive Features Section */}
+            <Features />
+
             {/* Visual / Technology Section */}
             <div className="ts-visual-breakdown">
                 <div className="visual-container">
@@ -330,36 +388,36 @@ const TrafficSurvey = () => {
                             <div className="feature-item-small">
                                 <span className="check-icon">✓</span>
                                 <div>
-                                    <strong>Multi-Class Classification</strong>
-                                    <div style={{ fontSize: '0.85em', color: '#64748b' }}>Cars, Trucks, Buses, Bikes, Pedestrians</div>
+                                    <strong>Vehicle Classification</strong>
+                                    <div style={{ fontSize: '0.85em', color: '#64748b' }}>Cars, Trucks, Buses, Bikes with high precision</div>
                                 </div>
                             </div>
                             <div className="feature-item-small">
                                 <span className="check-icon">✓</span>
                                 <div>
-                                    <strong>Turning Movements (TMC)</strong>
-                                    <div style={{ fontSize: '0.85em', color: '#64748b' }}>Left, Right, U-Turn patterns</div>
+                                    <strong>Link Count Analysis</strong>
+                                    <div style={{ fontSize: '0.85em', color: '#64748b' }}>Traffic volume and flow rates across segments</div>
                                 </div>
                             </div>
                             <div className="feature-item-small">
                                 <span className="check-icon">✓</span>
                                 <div>
-                                    <strong>Gap & Headway Analysis</strong>
-                                    <div style={{ fontSize: '0.85em', color: '#64748b' }}>Safety and flow efficiency metrics</div>
+                                    <strong>Queue Length Detection</strong>
+                                    <div style={{ fontSize: '0.85em', color: '#64748b' }}>Monitor congestion and waiting times</div>
                                 </div>
                             </div>
                             <div className="feature-item-small">
                                 <span className="check-icon">✓</span>
                                 <div>
-                                    <strong>Gridlock Prediction</strong>
-                                    <div style={{ fontSize: '0.85em', color: '#64748b' }}>Queue length monitoring</div>
+                                    <strong>Peak Hours Analysis</strong>
+                                    <div style={{ fontSize: '0.85em', color: '#64748b' }}>Identify peak traffic patterns for planning</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="visual-image-wrapper">
-                        <img src="/images/analysis_detect.jpg" alt="Traffic Analysis Visualization" className="visual-image" />
+                        <img src="/images/analysis_detect.jpg" alt="Advanced traffic analysis visualization showing multi-class vehicle classification, turning movements, and traffic flow patterns" className="visual-image" loading="lazy" />
                         <div className="stat-badge">
                             <span className="stat-number">24h</span>
                             <span className="stat-label">Turnaround</span>
