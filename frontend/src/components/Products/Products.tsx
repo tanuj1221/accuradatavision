@@ -4,35 +4,43 @@ import './Products.css';
 const products = [
   {
     id: 'traffic',
-    title: 'Traffic Survey',
-    description: 'AI-powered vehicle counting with multi-directional analysis, vehicle classification, and traffic flow patterns.',
+    title: 'Traffic Survey & Analysis',
+    description: 'Professional TMC (Turning Movement Count), AADT, traffic volume studies, vehicle classification, and comprehensive traffic data analysis with 95%+ accuracy.',
     image: '/images/analysis_detect.jpg',
-    features: ['Directional counting', 'Vehicle classification', 'Flow analysis', 'PDF/Excel reports'],
+    features: ['TMC & AADT Analysis', 'Vehicle Classification', 'Origin-Destination Surveys', 'Peak Hour Studies', 'Gap & Headway Analysis', 'PDF/Excel Reports'],
     link: '/traffic-survey'
   },
   {
     id: 'people',
     title: 'People Counting',
-    description: 'Accurate footfall analytics for retail spaces, malls, and public areas with entry/exit tracking.',
+    description: 'AI Machine Vision based footfall analytics for retail spaces, malls, and public areas with entry/exit tracking and crowd intelligence.',
     image: '/images/people_counting_detect.png',
-    features: ['Footfall analytics', 'Crowd density', 'Entry/exit tracking', 'Heatmaps'],
+    features: ['Footfall Analytics', 'Crowd Density', 'Entry/Exit Tracking', 'Heatmaps', 'Real-time Monitoring'],
     link: '/people-counting'
   },
   {
     id: 'parking',
     title: 'Parking Management',
-    description: 'Real-time parking occupancy detection and available spot tracking for smarter parking solutions.',
+    description: 'AI Machine Vision based real-time parking occupancy detection and available spot tracking for smarter parking solutions.',
     image: '/images/parking_detect.png',
-    features: ['Occupancy detection', 'Spot tracking', 'Real-time guidance', 'Utilization reports'],
+    features: ['Occupancy Detection', 'Spot Tracking', 'Real-time Guidance', 'Utilization Reports', 'Multi-level Support'],
     link: '/parking-management'
   },
   {
     id: 'safety',
     title: 'Safety Monitoring',
-    description: 'Intelligent anomaly detection for public and private spaces. Automatically identify safety hazards, unauthorized access, or suspicious behaviors and trigger instant alerts.',
+    description: 'AI Machine Vision based intelligent anomaly detection for public and private spaces. Automatically identify safety hazards, unauthorized access, or suspicious behaviors.',
     image: '/images/ppe_detect.png',
-    features: ['Anomaly & accident detection', 'Restricted zone monitoring', 'Instant SMS/Email alerts', '24/7 automated incident logging'],
+    features: ['Anomaly Detection', 'Restricted Zone Monitoring', 'Instant Alerts', '24/7 Automated Logging', 'PPE Compliance'],
     link: '/safety-monitoring'
+  },
+  {
+    id: 'accura-count',
+    title: 'AccuraCount Software',
+    description: 'Client-side traffic analysis and reporting software. Visualize trajectories, draw counting lines, perform lane analysis, and export professional reports.',
+    image: '/images/accura_count_software.png',
+    features: ['Trajectory Visualization', 'Counting Line Analysis', 'Lane-wise Distribution', 'Heatmaps & Dashboards', 'Custom Reports'],
+    link: '/accura-count'
   },
 ];
 
@@ -42,17 +50,21 @@ const Products = () => {
       <div className="products-container">
         <span className="section-tag">Our Products</span>
         <h2 className="products-title">
-          AI Vision Solutions for <span>Every Need</span>
+          AI Machine Vision Based <span>Solutions</span>
         </h2>
         <p className="products-subtitle">
-          From traffic analysis to safety monitoring, our solutions help you make data-driven decisions.
+          Comprehensive AI Machine Vision solutions for traffic analysis, people counting, parking management, and safety monitoring.
         </p>
 
         <div className="products-grid">
           {products.map((product) => (
             <div key={product.id} className="product-card">
               <div className="product-image">
-                <img src={product.image} alt={product.title} />
+                <img 
+                  src={product.image} 
+                  alt={`${product.title} - ${product.description}`}
+                  loading="lazy"
+                />
               </div>
               <div className="product-content">
                 <h3 className="product-title">{product.title}</h3>

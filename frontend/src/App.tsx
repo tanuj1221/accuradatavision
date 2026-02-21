@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import WhatsAppChat from './components/WhatsAppChat';
 import Home from './pages/Home';
 import TrafficSurvey from './pages/TrafficSurvey';
 import PeopleCounting from './pages/PeopleCounting';
@@ -10,6 +11,7 @@ import SafetyMonitoring from './pages/SafetyMonitoring';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import AccuraCount from './pages/AccuraCount';
+import About from './pages/About';
 import './App.css';
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/traffic-survey" element={<TrafficSurvey />} />
         <Route path="/accura-count" element={<AccuraCount />} />
         <Route path="/people-counting" element={<PeopleCounting />} />
@@ -41,6 +44,7 @@ function App() {
         <Route path="/admin1221" element={<Admin />} />
       </Routes>
       <Footer />
+      <WhatsAppChat />
     </>
   );
 }
