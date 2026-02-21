@@ -39,6 +39,14 @@ const TrafficSurvey = () => {
                 <meta name="keywords" content="TMC services, turning movement count, AADT, annual average daily traffic, traffic volume studies, vehicle classification, link count analysis, queue length detection, journey time tracking, roundabout analysis, density heatmap, dual time heatmap, road coverage heatmap, peak hours analysis, speed analysis, near miss detection, O-D matrix analysis, origin destination matrix, traffic flow patterns, incident detection, parking management, pedestrian counting, cyclist counting, intersection analysis, origin destination survey, gap analysis, traffic data collection, automated traffic counting, video traffic survey, CCTV traffic counting, traffic engineering services, transportation planning, highway survey, road traffic survey, junction survey, exportable reports PDF Excel CSV, USA traffic survey, UK TMC, Europe traffic studies, Australia AADT, Germany vehicle classification" />
                 <link rel="canonical" href="https://accuradatavision.com/traffic-survey" />
                 
+                {/* Hreflang Tags for International SEO */}
+                <link rel="alternate" hrefLang="en" href="https://accuradatavision.com/traffic-survey" />
+                <link rel="alternate" hrefLang="en-US" href="https://accuradatavision.com/traffic-survey" />
+                <link rel="alternate" hrefLang="en-GB" href="https://accuradatavision.com/traffic-survey" />
+                <link rel="alternate" hrefLang="en-AU" href="https://accuradatavision.com/traffic-survey" />
+                <link rel="alternate" hrefLang="en-DE" href="https://accuradatavision.com/traffic-survey" />
+                <link rel="alternate" hrefLang="x-default" href="https://accuradatavision.com/traffic-survey" />
+                
                 {/* Open Graph Tags */}
                 <meta property="og:title" content="TMC, AADT, Vehicle Classification | Traffic Survey Services | US, UK, Europe, Australia" />
                 <meta property="og:description" content="Professional TMC (Turning Movement Count), AADT, traffic volume studies, vehicle classification with 95%+ accuracy. Serving US, UK, Europe, Australia, Germany." />
@@ -74,10 +82,15 @@ const TrafficSurvey = () => {
                             "email": "support@accuradatavision.com"
                         },
                         "areaServed": [
-                            {"@type": "Country", "name": "United States"},
-                            {"@type": "Country", "name": "United Kingdom"},
-                            {"@type": "Country", "name": "Australia"},
-                            {"@type": "Country", "name": "Germany"}
+                            {"@type": "Country", "name": "United States", "identifier": "US"},
+                            {"@type": "Country", "name": "United Kingdom", "identifier": "GB"},
+                            {"@type": "Country", "name": "Australia", "identifier": "AU"},
+                            {"@type": "Country", "name": "Germany", "identifier": "DE"},
+                            {"@type": "Country", "name": "India", "identifier": "IN"},
+                            {"@type": "Country", "name": "Canada", "identifier": "CA"},
+                            {"@type": "Country", "name": "New Zealand", "identifier": "NZ"},
+                            {"@type": "Country", "name": "Netherlands", "identifier": "NL"},
+                            {"@type": "Country", "name": "France", "identifier": "FR"}
                         ],
                         "serviceType": [
                             "TMC - Turning Movement Count",

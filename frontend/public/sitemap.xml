@@ -43,9 +43,15 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://accuradatavision.com/accuracount</loc>
+    <loc>https://accuradatavision.com/accura-count</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://accuradatavision.com/about</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
