@@ -9,14 +9,14 @@ const Results = () => {
       icon: '🎯'
     },
     {
-      number: '60%',
-      label: 'Faster Speed',
+      number: 'Faster',
+      label: 'Quick Turnaround',
       description: 'Deliver comprehensive traffic reports in hours instead of weeks',
       icon: '⚡'
     },
     {
-      number: '40%',
-      label: 'Cost Reduction',
+      number: 'Cost',
+      label: 'Effective Solutions',
       description: 'Significant savings on operational expenses and manpower',
       icon: '💰'
     }
@@ -39,7 +39,7 @@ const Results = () => {
           {results.map((result, index) => (
             <div key={index} className="result-card">
               <div className="result-icon">{result.icon}</div>
-              <div className="result-number">{result.number}</div>
+              {result.number && <div className="result-number">{result.number}</div>}
               <div className="result-label">{result.label}</div>
               <div className="result-description">{result.description}</div>
             </div>

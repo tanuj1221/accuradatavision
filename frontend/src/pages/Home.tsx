@@ -33,7 +33,7 @@ const Home = () => {
         <>
             <Helmet>
                 <title>TMC, AADT, Vehicle Classification & Traffic Survey Services | US, UK, Europe, Australia</title>
-                <meta name="description" content="Leading provider of TMC (Turning Movement Count), AADT, traffic volume studies, vehicle classification, link count analysis, queue length detection, journey time tracking, roundabout analysis, density heatmaps, speed analysis, near miss detection, O-D matrix analysis in US, UK, Europe, Australia, Germany. AI Machine Vision based traffic data collection with 95%+ accuracy, 60% faster delivery, 40% cost reduction. Professional CCTV traffic surveys and transportation planning services." />
+                <meta name="description" content="Leading provider of TMC (Turning Movement Count), AADT, traffic volume studies, vehicle classification, link count analysis, queue length detection, journey time tracking, roundabout analysis, density heatmaps, speed analysis, near miss detection, O-D matrix analysis in US, UK, Europe, Australia, Germany. AI Machine Vision based traffic data collection with 95%+ accuracy, faster delivery, and cost-effective solutions. Professional CCTV traffic surveys and transportation planning services." />
                 <meta name="keywords" content="TMC, turning movement count, AADT, traffic volume studies, vehicle classification, link count analysis, queue length detection, journey time tracking, roundabout analysis, density heatmap, dual time heatmap, road coverage heatmap, peak hours analysis, speed analysis, near miss detection, O-D matrix analysis, origin destination matrix, traffic flow patterns, incident detection, parking management, traffic data collection, automated counting, video traffic survey, traffic engineering, transportation planning, highway survey, USA traffic counting, UK traffic survey, Europe traffic analysis, Australia TMC, Germany AADT, CCTV traffic counting, AI Machine Vision traffic survey, exportable reports PDF Excel CSV" />
                 <link rel="canonical" href={currentUrl} />
                 
@@ -68,7 +68,7 @@ const Home = () => {
                         "name": "Accura Datavision",
                         "url": baseUrl,
                         "logo": `${baseUrl}/logo.svg`,
-                        "description": "Professional TMC, AADT, traffic volume studies, vehicle classification, link count analysis, queue length detection, journey time tracking, roundabout analysis, density heatmaps, speed analysis, near miss detection, O-D matrix analysis, and comprehensive traffic survey services in US, UK, Europe, Australia, Germany with 95%+ accuracy, 60% faster delivery, and 40% cost reduction",
+                        "description": "Professional TMC, AADT, traffic volume studies, vehicle classification, link count analysis, queue length detection, journey time tracking, roundabout analysis, density heatmaps, speed analysis, near miss detection, O-D matrix analysis, and comprehensive traffic survey services in US, UK, Europe, Australia, Germany with 95%+ accuracy, faster delivery, and cost-effective solutions",
                         "telephone": "+91-7249417317",
                         "email": "support@accuradatavision.com",
                         "address": {
