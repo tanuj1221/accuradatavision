@@ -45,11 +45,23 @@
   /* Transparent background */
 }
 
+.navbar-brand {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-brand:hover {
+  opacity: 0.8;
+}
+
 .navbar-logo-img {
   height: 48px;
   /* Slightly larger for presence */
   width: auto;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+  pointer-events: none;
 }
 
 .promo-container {
@@ -75,23 +87,87 @@
   font-weight: 300;
 }
 
+/* Professional WhatsApp CTA Button */
+.whatsapp-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
+
+.whatsapp-cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.whatsapp-cta-button:hover::before {
+  left: 100%;
+}
+
+.whatsapp-cta-button:hover {
+  background: linear-gradient(135deg, #20BA5A 0%, #1DA851 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.whatsapp-cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.whatsapp-cta-icon svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.whatsapp-cta-text {
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Legacy button class for backward compatibility */
 .btn-demo {
   background-color: #4a86e8 !important;
-  /* Solid professional blue matching standard */
   background: #4a86e8 !important;
-  /* Fallback/Override gradient */
   border: none;
   font-weight: 600;
   font-size: 0.85rem;
   padding: 0.5rem 1rem;
-  /* Balanced padding */
   border-radius: 4px;
-  /* More squared professional look */
   box-shadow: none;
-  /* Remove heavy shadows */
   transition: all 0.2s ease;
   text-transform: none;
-  /* Formatting as written */
   letter-spacing: normal;
   color: #fff !important;
   display: inline-flex;

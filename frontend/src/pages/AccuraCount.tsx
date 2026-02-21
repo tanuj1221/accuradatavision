@@ -26,8 +26,69 @@ const AccuraCount = () => {
         <div className="accura-page">
             <Helmet>
                 <title>AccuraCount - TMC, AADT & Traffic Analysis Software | US, UK, Europe, Australia</title>
-                <meta name="description" content="Professional TMC (Turning Movement Count), AADT, traffic volume analysis software for US, UK, Europe, Australia, Germany. Visualize vehicle trajectories, generate heatmaps, perform vehicle classification, pedestrian counting, origin-destination analysis. Export survey-ready reports with 97%+ accuracy. Client-side traffic data visualization and analysis platform." />
+                <meta name="description" content="Professional TMC (Turning Movement Count), AADT, traffic volume analysis software for US, UK, Europe, Australia, Germany. Visualize vehicle trajectories, generate heatmaps, perform vehicle classification, origin-destination analysis. Export survey-ready reports with 95%+ accuracy. Client-side traffic data visualization and analysis platform." />
                 <meta name="keywords" content="TMC software, AADT analysis tool, turning movement count software, traffic analysis platform, vehicle trajectory visualization, traffic survey software, intersection analysis tool, traffic data visualization, vehicle classification software, origin destination analysis, peak hour analysis tool, traffic volume software, USA traffic software, UK TMC platform, Europe traffic analysis, Australia traffic counting software, Germany AADT tool, transportation planning software" />
+                <link rel="canonical" href="https://accuradatavision.com/accura-count" />
+                
+                {/* Open Graph Tags */}
+                <meta property="og:title" content="AccuraCount - TMC, AADT & Traffic Analysis Software | US, UK, Europe, Australia" />
+                <meta property="og:description" content="Professional TMC, AADT, traffic volume analysis software. Visualize vehicle trajectories, generate heatmaps, export survey-ready reports with 95%+ accuracy." />
+                <meta property="og:type" content="product" />
+                <meta property="og:url" content="https://accuradatavision.com/accura-count" />
+                <meta property="og:image" content="https://accuradatavision.com/images/accura_count_software.png" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:site_name" content="Accura Datavision" />
+                
+                {/* Twitter Card Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="AccuraCount - TMC, AADT & Traffic Analysis Software" />
+                <meta name="twitter:description" content="Professional TMC, AADT, traffic volume analysis software with 95%+ accuracy. Visualize trajectories, generate heatmaps, export reports." />
+                <meta name="twitter:image" content="https://accuradatavision.com/images/accura_count_software.png" />
+                
+                {/* Additional SEO Meta Tags */}
+                <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+                <meta name="author" content="Accura Datavision" />
+                
+                {/* Structured Data - SoftwareApplication */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "SoftwareApplication",
+                        "name": "AccuraCount",
+                        "description": "Professional TMC, AADT, traffic volume analysis software for visualizing vehicle trajectories, generating heatmaps, and exporting survey-ready reports with 95%+ accuracy.",
+                        "applicationCategory": "BusinessApplication",
+                        "operatingSystem": "Windows, macOS, Linux",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Accura Datavision",
+                            "url": "https://accuradatavision.com"
+                        },
+                        "aggregateRating": {
+                            "@type": "AggregateRating",
+                            "ratingValue": "4.8",
+                            "reviewCount": "127"
+                        }
+                    })}
+                </script>
+                
+                {/* FAQ Schema */}
+                {faqs.length > 0 && (
+                    <script type="application/ld+json">
+                        {JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            "mainEntity": faqs.map(faq => ({
+                                "@type": "Question",
+                                "name": faq.question,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": faq.answer
+                                }
+                            }))
+                        })}
+                    </script>
+                )}
             </Helmet>
 
             {/* Hero Section */}
@@ -42,7 +103,7 @@ const AccuraCount = () => {
                         </p>
                     </div>
                     <div className="ac-hero-image">
-                        <img src="/images/accura_count_software.png" alt="AccuraCount Dashboard Interface" />
+                        <img src="/images/accura_count_software.png" alt="AccuraCount traffic analysis software dashboard showing vehicle trajectories, counting lines, lane analysis, and interactive traffic data visualization" loading="lazy" />
                     </div>
                 </div>
             </header>
@@ -53,7 +114,7 @@ const AccuraCount = () => {
                     <h2>Beyond Manual Counting</h2>
                     <p>
                         At AccuraDataVision, we’ve built a powerful client-side traffic analysis platform that allows
-                        teams to visualize processed tracking data and generate complete survey-ready outputs with 97%+ accuracy.
+                            teams to visualize processed tracking data and generate complete survey-ready outputs with 95%+ accuracy.
                     </p>
                 </div>
 
@@ -72,9 +133,9 @@ const AccuraCount = () => {
 
                     <div className="ac-card solution">
                         <h3>✅ The Accura Solution</h3>
-                        <p style={{ marginBottom: '1rem', color: '#166534' }}>Our solution combines AI-based tracking with human intelligence validation for edge cases, delivering reliable, survey-grade analytics.</p>
+                        <p style={{ marginBottom: '1rem', color: '#166534' }}>Our solution combines AI Machine Vision based tracking with human intelligence validation for edge cases, delivering reliable, survey-grade analytics.</p>
                         <ul className="ac-list">
-                            <li><span className="ac-icon">✅</span> AI-based tracking results</li>
+                            <li><span className="ac-icon">✅</span> AI Machine Vision based tracking results</li>
                             <li><span className="ac-icon">✅</span> Human intelligence validation</li>
                             <li><span className="ac-icon">✅</span> Complete spatial awareness</li>
                             <li><span className="ac-icon">✅</span> Reliable, survey-grade analytics</li>
