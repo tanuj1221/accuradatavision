@@ -79,6 +79,14 @@ const Contact = () => {
                 <meta name="keywords" content="TMC quote, AADT services, traffic survey contact, turning movement count, vehicle classification quote, traffic volume studies, pedestrian counting services, intersection analysis, traffic data collection USA, UK traffic survey quote, Europe TMC services, Australia AADT, Germany traffic survey, request traffic survey quote, transportation planning services, traffic engineering consultation" />
                 <link rel="canonical" href="https://accuradatavision.com/contact" />
                 
+                {/* Hreflang Tags for International SEO */}
+                <link rel="alternate" hrefLang="en" href="https://accuradatavision.com/contact" />
+                <link rel="alternate" hrefLang="en-US" href="https://accuradatavision.com/contact" />
+                <link rel="alternate" hrefLang="en-GB" href="https://accuradatavision.com/contact" />
+                <link rel="alternate" hrefLang="en-AU" href="https://accuradatavision.com/contact" />
+                <link rel="alternate" hrefLang="en-DE" href="https://accuradatavision.com/contact" />
+                <link rel="alternate" hrefLang="x-default" href="https://accuradatavision.com/contact" />
+                
                 {/* Open Graph Tags */}
                 <meta property="og:title" content="Contact - TMC, AADT, Traffic Survey Services | Accura Datavision" />
                 <meta property="og:description" content="Contact Accura Datavision for professional TMC, AADT, traffic volume studies, vehicle classification services. Get expert traffic data collection and analysis." />
@@ -107,13 +115,27 @@ const Contact = () => {
                         "mainEntity": {
                             "@type": "Organization",
                             "name": "Accura Datavision",
+                            "url": "https://accuradatavision.com",
                             "telephone": "+91-7249417317",
                             "email": "support@accuradatavision.com",
                             "address": {
                                 "@type": "PostalAddress",
                                 "addressLocality": "Mumbai",
+                                "addressRegion": "Maharashtra",
                                 "addressCountry": "IN"
-                            }
+                            },
+                            "areaServed": [
+                                {"@type": "Country", "name": "United States", "identifier": "US"},
+                                {"@type": "Country", "name": "United Kingdom", "identifier": "GB"},
+                                {"@type": "Country", "name": "Australia", "identifier": "AU"},
+                                {"@type": "Country", "name": "Germany", "identifier": "DE"},
+                                {"@type": "Country", "name": "India", "identifier": "IN"},
+                                {"@type": "Country", "name": "Canada", "identifier": "CA"},
+                                {"@type": "Country", "name": "New Zealand", "identifier": "NZ"}
+                            ],
+                            "sameAs": [
+                                "https://www.linkedin.com/company/accura-datavision"
+                            ]
                         }
                     })}
                 </script>

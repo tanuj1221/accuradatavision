@@ -67,8 +67,18 @@ const About = () => {
       <Helmet>
         <title>About Us - AI Machine Vision Based Traffic Survey Services | Accura Datavision</title>
         <meta name="description" content="Learn about Accura Datavision - a leading provider of AI Machine Vision based traffic survey services, TMC, AADT, vehicle classification, and comprehensive traffic data analysis. Serving US, UK, Europe, Australia, Germany with 95%+ accuracy." />
-        <meta name="keywords" content="about accura datavision, traffic survey company, AI machine vision, TMC services, AADT analysis, vehicle classification, traffic data collection, transportation planning" />
+        <meta name="keywords" content="about accura datavision, traffic survey company, AI machine vision, TMC services, AADT analysis, vehicle classification, traffic data collection, transportation planning, traffic engineering, CCTV traffic analysis" />
+        <meta name="author" content="Accura Datavision" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href="https://accuradatavision.com/about" />
+        
+        {/* Hreflang Tags for International SEO */}
+        <link rel="alternate" hrefLang="en" href="https://accuradatavision.com/about" />
+        <link rel="alternate" hrefLang="en-US" href="https://accuradatavision.com/about" />
+        <link rel="alternate" hrefLang="en-GB" href="https://accuradatavision.com/about" />
+        <link rel="alternate" hrefLang="en-AU" href="https://accuradatavision.com/about" />
+        <link rel="alternate" hrefLang="en-DE" href="https://accuradatavision.com/about" />
+        <link rel="alternate" hrefLang="x-default" href="https://accuradatavision.com/about" />
         
         {/* Open Graph Tags */}
         <meta property="og:title" content="About Us - AI Machine Vision Based Traffic Survey Services" />
@@ -76,25 +86,76 @@ const About = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://accuradatavision.com/about" />
         <meta property="og:image" content="https://accuradatavision.com/images/traffic_detect.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Accura Datavision" />
         
-        {/* Structured Data */}
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us - AI Machine Vision Based Traffic Survey Services" />
+        <meta name="twitter:description" content="Learn about Accura Datavision - leading AI Machine Vision based traffic survey services provider with 95%+ accuracy." />
+        <meta name="twitter:image" content="https://accuradatavision.com/images/traffic_detect.jpg" />
+        
+        {/* Enhanced Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "AboutPage",
             "name": "About Accura Datavision",
-            "description": "Professional AI Machine Vision based traffic survey services provider",
+            "description": "Professional AI Machine Vision based traffic survey services provider specializing in TMC, AADT, vehicle classification, and comprehensive traffic data analysis",
+            "url": "https://accuradatavision.com/about",
             "mainEntity": {
               "@type": "Organization",
+              "@id": "https://accuradatavision.com/#organization",
               "name": "Accura Datavision",
+              "alternateName": "Accura DataVision",
               "url": "https://accuradatavision.com",
+              "logo": "https://accuradatavision.com/logo.svg",
+              "description": "Leading provider of AI Machine Vision based traffic survey services with 95%+ accuracy. Specializing in TMC, AADT, vehicle classification, and comprehensive traffic data analysis.",
               "email": "support@accuradatavision.com",
               "telephone": "+91-7249417317",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Mumbai",
+                "addressRegion": "Maharashtra",
                 "addressCountry": "IN"
-              }
+              },
+              "areaServed": [
+                {"@type": "Country", "name": "United States"},
+                {"@type": "Country", "name": "United Kingdom"},
+                {"@type": "Country", "name": "Australia"},
+                {"@type": "Country", "name": "Germany"},
+                {"@type": "Country", "name": "India"}
+              ],
+              "knowsAbout": [
+                "AI Machine Vision",
+                "Traffic Survey Services",
+                "TMC Analysis",
+                "AADT Analysis",
+                "Vehicle Classification",
+                "Traffic Data Collection",
+                "Transportation Planning"
+              ],
+              "sameAs": [
+                "https://www.linkedin.com/company/accura-datavision"
+              ]
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://accuradatavision.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "About Us",
+                  "item": "https://accuradatavision.com/about"
+                }
+              ]
             }
           })}
         </script>
